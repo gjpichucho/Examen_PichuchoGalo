@@ -36,35 +36,53 @@
         <div class="row">
             <div class="col-sm-8 col-sm-offset-2">
 
-            <table class="table table-bordered table-striped" style="margin-top:20px;">
+                <form name="forma" method="POST" action="moduloRol.php">
 
-                    <thead>
-                        
-                        <th>Modulos</th>
-                        
-                    </thead>
-                    <tbody>
-                        <?php
+                <div class="wrap-input100">
+					<div class="label-input100">Rol</div>
+					<div>
+						<select class="js-select2" id="rol" name="rol">
+							<option value="0">Seleccione una Rol</option>
+							<option value="1">ADMIN</option>
+							<option value="2">ALUMNO</option>
+							<option value="3">DOCENTE</option>
+						</select>
+						
+					</div>
+					<span class="focus-input100"></span>
+                </div>
+                <button type="submit" name="accion" value="" class="btn btn-primary"><span
+                                class="glyphicon glyphicon-check"></span>Aceptar</button>
+
+                    <table class="table table-bordered table-striped" style="margin-top:20px;">
+
+                        <thead>
+
+                            <th>Modulos</th>
+
+                        </thead>
+                        <tbody>
+                            <?php
 						
 						if ($result->num_rows > 0) {
 							// output data of each row
 							while ($row = $result->fetch_assoc()) {
                     ?>
-                        <tr>
-                            <td><?php echo $row['COD_MODULO']; ?></td>
-                      
-                        </tr>
-                        <?php
+                            <tr>
+                                <td><?php echo $row['COD_MODULO']; ?></td>
+
+                            </tr>
+                            <?php
                 	}
 				} else { ?>
-                        <tr>
-                            <td colspan="8" class="text-center">NO HAY DATOS</td>;
-                        </tr>
-                        <?php } ?>
+                            <tr>
+                                <td colspan="8" class="text-center">NO HAY DATOS</td>
+                            </tr>
+                            <?php } ?>
 
-                    </tbody>
-                </table>
-
+                        </tbody>
+                    </table>
+                </form>
 
             </div>
         </div>

@@ -19,8 +19,8 @@ $moduloService= new moduloService();
 
 	}else if(isset($_GET["update"])){
 		
-		$modulo=$moduloService->findByPK($_GET["update"]);
-		
+        $modulo=$moduloService->findByPK($_GET["update"]);
+        		
 		if ($modulo !=null) {
 		$codModulo= $modulo["COD_MODULO"];
 		$nombre=$modulo["NOMBRE"];
@@ -126,7 +126,7 @@ $moduloService= new moduloService();
                             </div>
                             <div class="row form-group">
                                 <div class="col-sm-4 text-center">
-                                    <label class="control-label" style="position:relative; top:7px;" id="lblcedula"
+                                    <label class="control-label" style="position:relative; top:7px;" 
                                         for="codigo">Codigo </label>
                                 </div>
                                 <div class="col-sm-3">
@@ -136,7 +136,7 @@ $moduloService= new moduloService();
                             </div>
                             <div class="row form-group">
                                 <div class="col-sm-4 text-center">
-                                    <label class="control-label" style="position:relative; top:7px;" id="lblNombres"
+                                    <label class="control-label" style="position:relative; top:7px;" 
                                         for="nombre">Nombre</label>
                                 </div>
                                 <div class="col-sm-5">
